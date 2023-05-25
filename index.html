@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="scrollable-tabs-container">
+      <div class="left-arrow">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5L8.25 12l7.5-7.5"
+          />
+        </svg>
+      </div>
+
+      <ul>
+        <li>
+         <!-- ondragstart: específico que debe suceder cuando se arrastra el elemento
+              draggable:indico que el elemento se podra arrastrar--> 
+          <a href="#" draggable="true" ondragstart="drag(event)" id="dwes" data-secret="17">DWES</a>
+        </li>
+
+        <li>
+          <a href="#" draggable="true" ondragstart="drag(event)" id="daw">DAW</a>
+        </li>
+
+        <li>
+          <a href="#" draggable="true" ondragstart="drag(event)" id="dwec">DWEC</a>
+        </li>
+
+        <li>
+          <a href="#" draggable="true" ondragstart="drag(event)" id="empresas">EMPRESAS</a>
+        </li>
+
+        <li>
+          <a href="#" draggable="true" ondragstart="drag(event)" id="sisi">SISI</a>
+        </li>
+
+        <li>
+          <a href="#" draggable="true" ondragstart="drag(event)" id="diw">DIW</a>
+        </li>
+
+        <li>
+          <a href="#" draggable="true" ondragstart="drag(event)" id="lm">LM</a>
+        </li>
+
+       </ul>
+
+      <div class="right-arrow active">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M8.25 4.5l7.5 7.5-7.5 7.5"
+          />
+        </svg>
+      </div>
+    </div>
+    <div class="card-group">
+      <div class="card">
+        
+        <div class="card-body">
+          <h5 class="card-title">Profesor 1</h5>
+          <p class="card-text"><table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Modulos</th>
+                <th scope="col">Horas</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <!--ondrop: especifico que sucede cuando se suelta in elemento arrastrado
+                    ondragover: especifico donde se puede soltar los datos arrastrados-->
+                <td class="box" id="0" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td id="columna2"></td>
+                
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <!--ondrop: especifico que sucede cuando se suelta in elemento arrastrado
+                    ondragover: especifico donde se puede soltar los datos arrastrados-->
+                <td class="box" id="1" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td></td>
+                
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <!--ondrop: especifico que sucede cuando se suelta in elemento arrastrado
+                    ondragover: especifico donde se puede soltar los datos arrastrados-->
+                <td class="box" id="2" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                <td></td>
+                
+              </tr>
+            </tbody>
+          </table>
+          
+          
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+      <div class="card">
+        
+        <div class="card-body">
+          <h5 class="card-title">Profesor 2</h5>
+          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+      <div class="card">
+
+        <div class="card-body">
+          <h5 class="card-title">Profesor 3</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="main.js"></script>
+  </body>
+</html>
