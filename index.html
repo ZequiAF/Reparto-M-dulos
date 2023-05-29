@@ -32,15 +32,15 @@
         <li>
          <!-- ondragstart: específico que debe suceder cuando se arrastra el elemento
               draggable:indico que el elemento se podra arrastrar--> 
-          <a href="#" draggable="true" ondragstart="drag(event)" id="dwes" data-secret="17">DWES</a>
+          <a href="#" class="draggable" id="btn1" draggable="true" ondragstart="drag(event)" data-secret="123">Botón 1</a>
         </li>
 
         <li>
-          <a href="#" draggable="true" ondragstart="drag(event)" id="daw">DAW</a>
+          <a href="#" class="draggable" id="btn2" draggable="true" ondragstart="drag(event)" data-secret="456">Botón 2</a>
         </li>
 
         <li>
-          <a href="#" draggable="true" ondragstart="drag(event)" id="dwec">DWEC</a>
+          <a href="#" class="draggable" id="btn3" draggable="true" ondragstart="drag(event)" data-secret="789">Botón 3</a>
         </li>
 
         <li>
@@ -97,24 +97,24 @@
                 <th scope="row">1</th>
                 <!--ondrop: especifico que sucede cuando se suelta in elemento arrastrado
                     ondragover: especifico donde se puede soltar los datos arrastrados-->
-                <td class="box" id="0" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-                <td id="columna2"></td>
+                    <td class="box" id="0" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                    <td class="secret"></td>
                 
               </tr>
               <tr>
                 <th scope="row">2</th>
-                <!--ondrop: especifico que sucede cuando se suelta in elemento arrastrado
+                <!--ondrop: especifico que sucede cuando se suelta un elemento arrastrado
                     ondragover: especifico donde se puede soltar los datos arrastrados-->
-                <td class="box" id="1" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-                <td></td>
+                    <td class="box" id="1" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                    <td class="secret"></td>
                 
               </tr>
               <tr>
                 <th scope="row">3</th>
                 <!--ondrop: especifico que sucede cuando se suelta in elemento arrastrado
                     ondragover: especifico donde se puede soltar los datos arrastrados-->
-                <td class="box" id="2" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-                <td></td>
+                    <td class="box" id="2" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                    <td class="secret"></td>
                 
               </tr>
             </tbody>
@@ -127,16 +127,90 @@
       <div class="card">
         
         <div class="card-body">
-          <h5 class="card-title">Profesor 2</h5>
-          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          <h5 class="card-title">Profesor 1</h5>
+          <p class="card-text"><table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Modulos</th>
+                <th scope="col">Horas</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <!--ondrop: especifico que sucede cuando se suelta in elemento arrastrado
+                    ondragover: especifico donde se puede soltar los datos arrastrados-->
+                    <td class="box" id="3" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                    <td class="secret"></td>
+                
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <!--ondrop: especifico que sucede cuando se suelta in elemento arrastrado
+                    ondragover: especifico donde se puede soltar los datos arrastrados-->
+                    <td class="box" id="4" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                    <td class="secret"></td>
+                
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <!--ondrop: especifico que sucede cuando se suelta in elemento arrastrado
+                    ondragover: especifico donde se puede soltar los datos arrastrados-->
+                    <td class="box" id="5" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                    <td class="secret"></td>
+                
+              </tr>
+            </tbody>
+          </table>
+          
+          
           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
       </div>
       <div class="card">
-
+        
         <div class="card-body">
-          <h5 class="card-title">Profesor 3</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          <h5 class="card-title">Profesor 1</h5>
+          <p class="card-text"><table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Modulos</th>
+                <th scope="col">Horas</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <!--ondrop: especifico que sucede cuando se suelta in elemento arrastrado
+                    ondragover: especifico donde se puede soltar los datos arrastrados-->
+                    <td class="box" id="6" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                    <td class="secret"></td>
+                
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <!--ondrop: especifico que sucede cuando se suelta in elemento arrastrado
+                    ondragover: especifico donde se puede soltar los datos arrastrados-->
+                    <td class="box" id="7" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                    <td class="secret"></td>
+                
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <!--ondrop: especifico que sucede cuando se suelta in elemento arrastrado
+                    ondragover: especifico donde se puede soltar los datos arrastrados-->
+                    <td class="box" id="8" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                    <td class="secret"></td>
+                
+              </tr>
+            </tbody>
+          </table>
+          
+          
           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
       </div>

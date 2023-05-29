@@ -14,23 +14,34 @@ function drag(ev){
   ev.dataTransfer.setData("text", ev.target.id, event.target.dataset.secret);
 }
 
-function drop(ev){
-  //mediante ev.target.id tomo el nombre del id del div que puede ser 0, 1, 2...
-  //si el arreglo en div posicion está vacío, significa que no tiene nada, es decir,
-  //puedo soltar allí, en caso contrario, ya hay un elemento
-  if(arreglo[parseInt(ev.target.id)] == ""){
-    //obtengo los datos arrastrados con el metodo dataTransfer.getData(). Este método devolverá
-    // cualquier dato que se haya establecido en el mismo tipo en el método setData(). 
-    //En este ejemplo data quedará con el módulo que sea
+function drop(ev) {
+  ev.preventDefault();
+  if (arreglo[parseInt(ev.target.id)] == "") {
     let data = ev.dataTransfer.getData("text");
-    //agrego al arreglo el nombre del id
     arreglo[parseInt(ev.target.id)] = data;
-    //agrego el elemento arrastrado al elemento soltado
     ev.target.appendChild(document.getElementById(data));
-    document.getElementById("columna2").textContent = document.getElementById(data).dataset.secret;
-    
+
+    // Obtener el número secreto correspondiente al elemento arrastrado
+    let secretNumber = ev.target.dataset.secret;
+
+    // Crear un elemento para mostrar el número secreto
+    let secretDiv = document.createElement('div');
+    secretDiv.innerHTML = secretNumber;
+
+    // Agregar la clase 'secret' al elemento creado
+    secretDiv.classList.add('secret');
+
+    // Agregar el número secreto al div
+    ev.target.appendChild(secretDiv);
+  } else {
+    // Si el espacio ya está ocupado, eliminar el número secreto si existe
+    let secretDiv = ev.target.querySelector('.secret');
+    if (secretDiv) {
+      secretDiv.remove();
+    }
   }
 }
+
 
 
 //Barra de navegación elementos 
