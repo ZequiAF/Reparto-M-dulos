@@ -1,46 +1,43 @@
-//Drag and Drop
-//arreglo: para saber cuales son los divs ocupados
-let arreglo = ["","",""];
-
-//función que evita que se abra como enlace al soltar un elemento
-function allowDrop(ev){
+function allowDrop(ev) {
   ev.preventDefault();
 }
 
-//lo que ocurre cuando arrastramos un elemento
-function drag(ev){
-//metodo que establece el tip de datos y el valor del modulo arrastrado
-//en este caso el dato es texto y el valor es el id del elemento arrastrado: "modulo específico"
-  ev.dataTransfer.setData("text", ev.target.id, event.target.dataset.secret);
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+  //Creado por tu papi chulo
+  /*
+    Elimina el contenido del secret-number al moverlo de lugar llamando al abuelo que contiene todo
+  */
+  let target = ev.target;
+  let currentRow = target.parentNode;
+  let padrereal = currentRow.parentNode;
+  if (currentRow != null) {
+    console.log("estaba en mi puto lugar");
+    padrereal.querySelector('.secret-number').textContent = '';
+  }
 }
 
 function drop(ev) {
   ev.preventDefault();
-  if (arreglo[parseInt(ev.target.id)] == "") {
-    let data = ev.dataTransfer.getData("text");
-    arreglo[parseInt(ev.target.id)] = data;
-    ev.target.appendChild(document.getElementById(data));
+  let target = ev.target;
 
-    // Obtener el número secreto correspondiente al elemento arrastrado
-    let secretNumber = ev.target.dataset.secret;
-
-    // Crear un elemento para mostrar el número secreto
-    let secretDiv = document.createElement('div');
-    secretDiv.innerHTML = secretNumber;
-
-    // Agregar la clase 'secret' al elemento creado
-    secretDiv.classList.add('secret');
-
-    // Agregar el número secreto al div
-    ev.target.appendChild(secretDiv);
-  } else {
-    // Si el espacio ya está ocupado, eliminar el número secreto si existe
-    let secretDiv = ev.target.querySelector('.secret');
-    if (secretDiv) {
-      secretDiv.remove();
+  // Verificar si el elemento arrastrado es un botón
+  if (target.classList.contains('box')) {
+    let currentRow = target.parentNode;
+    let rightColumn = currentRow.querySelector('.secret-number');
+    if (!currentRow.querySelector('.draggable')) { //Comprueba que no haya un boton previo
+      // Eliminar el número secreto si no hay botón en la fila
+      if (ev.dataTransfer.getData('text')) {
+        let secretNumber = document.getElementById(ev.dataTransfer.getData('text')).getAttribute('data-secret');
+        rightColumn.textContent = secretNumber;
+      }
+      // Mover el botón arrastrado a la celda de destino
+      let draggedButton = document.getElementById(ev.dataTransfer.getData('text'));
+      target.appendChild(draggedButton);
     }
   }
 }
+
 
 
 
