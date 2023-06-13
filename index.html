@@ -5,11 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
+     <!-- Normas-->
+  <div class="contenedor"><button class="captura"  id="myBtn">Normas a tener en cuenta</button></div>
+  <!-- PopUp normas -->
+  <div id="myModal" class="modal">
+    <!--  contenido -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+  <div class="modal-content">
+    <div class="modal-header">
+      
+      <h2>NORMAS A TENER EN CUENTA</h2>
+    </div>
+    <div class="modal-body">
+      <li>El profesor debe hacer 21 horas, al conseguirse, el resultado de horas saldrá en verde </li>
+      <li>No se pueden repetir módulos</li>
+      <li>Se le permiten a los profesores tener dos horas mas o dos menos, apareciendo en color naranja. De lo contrario saldrá en rojo</li>
+    </div>
+    <div class="modal-footer">
+      <h3>By Ezequiel Matías Arean Ferández</h3>
+    </div>
+  </div>
+    </div>
+  <!--Slider-->
+  </div>
     <div class="scrollable-tabs-container">
       <div class="left-arrow">
         <svg
@@ -32,33 +56,43 @@
         <li>
          <!-- ondragstart: específico que debe suceder cuando se arrastra el elemento
               draggable:indico que el elemento se podra arrastrar--> 
-          <a href="#" class="draggable" id="btn1" draggable="true" ondragstart="drag(event)" data-secret="123">Botón 1</a>
+          <a href="#" class="draggable" id="btn1" draggable="true" ondragstart="drag(event)" data-secret="9">S2DAW-DWES</a>
         </li>
 
         <li>
-          <a href="#" class="draggable" id="btn2" draggable="true" ondragstart="drag(event)" data-secret="456">Botón 2</a>
+          <a href="#" class="draggable" id="btn2" draggable="true" ondragstart="drag(event)" data-secret="5">VS2DAW-DAW</a>
         </li>
 
         <li>
-          <a href="#" class="draggable" id="btn3" draggable="true" ondragstart="drag(event)" data-secret="789">Botón 3</a>
+          <a href="#" class="draggable" id="btn3" draggable="true" ondragstart="drag(event)" data-secret="7">S2DAW-DWEC</a>
         </li>
-
         <li>
-          <a href="#" draggable="true" ondragstart="drag(event)" id="empresas">EMPRESAS</a>
+          <a href="#" class="draggable" id="btn4" draggable="true" ondragstart="drag(event)" data-secret="2">VM2SMR-FCT-2</a>
         </li>
-
         <li>
-          <a href="#" draggable="true" ondragstart="drag(event)" id="sisi">SISI</a>
+          <a href="#" class="draggable" id="btn5" draggable="true" ondragstart="drag(event)" data-secret="6">S1DAW-SISI</a>
         </li>
-
         <li>
-          <a href="#" draggable="true" ondragstart="drag(event)" id="diw">DIW</a>
+          <a href="#" class="draggable" id="btn6" draggable="true" ondragstart="drag(event)"  data-secret="6">VS2DAW-DIW</a>
         </li>
-
         <li>
-          <a href="#" draggable="true" ondragstart="drag(event)" id="lm">LM</a>
+          <a href="#" class="draggable" id="btn7" draggable="true" ondragstart="drag(event)" data-secret="4">S1DAW-LMSG</a>
+        </li>
+        <li>
+          <a href="#" class="draggable" id="btn8" draggable="true" ondragstart="drag(event)" data-secret="3">S1DAM-ENDE</a>
+        </li>
+        <li>
+          <a href="#" class="draggable" id="btn9" draggable="true" ondragstart="drag(event)" data-secret="6">S1DAM-PROG</a>
+        </li>
+        <li>
+          <a href="#" class="draggable" id="btn10" draggable="true" ondragstart="drag(event)" data-secret="2">S2DAM-FCT-1</a>
+        </li>
+        <li>
+          <a href="#" class="draggable" id="btn11" draggable="true" ondragstart="drag(event)" data-secret="3">Videojuegos-PMV</a>
         </li>
 
+
+        
        </ul>
 
       <div class="right-arrow active">
@@ -78,6 +112,7 @@
         </svg>
       </div>
     </div>
+    <canvas  id="canvas"></canvas>
     <div class="card-group">
       <div class="card">
         
@@ -92,13 +127,13 @@
                 
               </tr>
             </thead>
-            <tbody>
+            <tbody class="padre-secret-number">
               <tr>
                 <th scope="row">1</th>
                 <!--ondrop: especifico que sucede cuando se suelta in elemento arrastrado
                     ondragover: especifico donde se puede soltar los datos arrastrados-->
                     <td class="box" id="0" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-                    <td class="secret"></td>
+                    <td class="secret-number" >0</td>
                 
               </tr>
               <tr>
@@ -106,7 +141,7 @@
                 <!--ondrop: especifico que sucede cuando se suelta un elemento arrastrado
                     ondragover: especifico donde se puede soltar los datos arrastrados-->
                     <td class="box" id="1" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-                    <td class="secret"></td>
+                    <td class="secret-number" >0</td>
                 
               </tr>
               <tr>
@@ -114,59 +149,26 @@
                 <!--ondrop: especifico que sucede cuando se suelta in elemento arrastrado
                     ondragover: especifico donde se puede soltar los datos arrastrados-->
                     <td class="box" id="2" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-                    <td class="secret"></td>
+                    <td class="secret-number" >0</td>
                 
               </tr>
-            </tbody>
-          </table>
-          
-          
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-      </div>
-      <div class="card">
-        
-        <div class="card-body">
-          <h5 class="card-title">Profesor 1</h5>
-          <p class="card-text"><table class="table">
-            <thead class="thead-dark">
               <tr>
-                <th scope="col">#</th>
-                <th scope="col">Modulos</th>
-                <th scope="col">Horas</th>
-                
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
+                <th scope="row">4</th>
                 <!--ondrop: especifico que sucede cuando se suelta in elemento arrastrado
                     ondragover: especifico donde se puede soltar los datos arrastrados-->
                     <td class="box" id="3" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-                    <td class="secret"></td>
+                    <td class="secret-number" >0</td>
                 
               </tr>
               <tr>
-                <th scope="row">2</th>
-                <!--ondrop: especifico que sucede cuando se suelta in elemento arrastrado
-                    ondragover: especifico donde se puede soltar los datos arrastrados-->
-                    <td class="box" id="4" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-                    <td class="secret"></td>
-                
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <!--ondrop: especifico que sucede cuando se suelta in elemento arrastrado
-                    ondragover: especifico donde se puede soltar los datos arrastrados-->
-                    <td class="box" id="5" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-                    <td class="secret"></td>
-                
+                <th scope="row">Total</th>
+                <td class="total">0</td>
               </tr>
             </tbody>
           </table>
           
           
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          
         </div>
       </div>
       <div class="card">
@@ -182,41 +184,111 @@
                 
               </tr>
             </thead>
-            <tbody>
+            <tbody class="padre-secret-number">
               <tr>
                 <th scope="row">1</th>
                 <!--ondrop: especifico que sucede cuando se suelta in elemento arrastrado
                     ondragover: especifico donde se puede soltar los datos arrastrados-->
-                    <td class="box" id="6" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-                    <td class="secret"></td>
+                    <td class="box" id="4" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                    <td class="secret-number">0</td>
                 
               </tr>
               <tr>
                 <th scope="row">2</th>
                 <!--ondrop: especifico que sucede cuando se suelta in elemento arrastrado
                     ondragover: especifico donde se puede soltar los datos arrastrados-->
-                    <td class="box" id="7" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-                    <td class="secret"></td>
+                    <td class="box" id="5" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                    <td class="secret-number">0</td>
                 
               </tr>
               <tr>
                 <th scope="row">3</th>
                 <!--ondrop: especifico que sucede cuando se suelta in elemento arrastrado
                     ondragover: especifico donde se puede soltar los datos arrastrados-->
-                    <td class="box" id="8" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-                    <td class="secret"></td>
+                    <td class="box" id="6" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                    <td class="secret-number">0</td>
                 
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <!--ondrop: especifico que sucede cuando se suelta in elemento arrastrado
+                    ondragover: especifico donde se puede soltar los datos arrastrados-->
+                    <td class="box" id="7" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                    <td class="secret-number" >0</td>
+                
+              </tr>
+              <tr>
+                <th scope="row">Total</th>
+                <td class="total">0</td>
               </tr>
             </tbody>
           </table>
           
           
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          
+        </div>
+      </div>
+      <div class="card">
+        
+        <div class="card-body">
+          <h5 class="card-title">Profesor 1</h5>
+          <p class="card-text"><table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Modulos</th>
+                <th scope="col">Horas</th>
+                
+              </tr>
+            </thead>
+            <tbody class="padre-secret-number">
+              <tr>
+                <th scope="row">1</th>
+                <!--ondrop: especifico que sucede cuando se suelta in elemento arrastrado
+                    ondragover: especifico donde se puede soltar los datos arrastrados-->
+                    <td class="box" id="8" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                    <td class="secret-number">0</td>
+                
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <!--ondrop: especifico que sucede cuando se suelta in elemento arrastrado
+                    ondragover: especifico donde se puede soltar los datos arrastrados-->
+                    <td class="box" id="9" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                    <td class="secret-number">0</td>
+                
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <!--ondrop: especifico que sucede cuando se suelta in elemento arrastrado
+                    ondragover: especifico donde se puede soltar los datos arrastrados-->
+                    <td class="box" id="10" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                    <td class="secret-number">0</td>
+                
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <!--ondrop: especifico que sucede cuando se suelta in elemento arrastrado
+                    ondragover: especifico donde se puede soltar los datos arrastrados-->
+                    <td class="box" id="11" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+                    <td class="secret-number" >0</td>
+                
+              </tr>
+              <tr>
+                <th scope="row">Total</th>
+                <td class="total">0</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          
+          
         </div>
       </div>
     </div>
-
+    <div class="contenedor"> <button class="captura" onclick="capturarImagen()">Descargar captura</button></div>
 
     <script src="main.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   </body>
 </html>

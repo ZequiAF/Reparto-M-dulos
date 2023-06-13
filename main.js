@@ -1,50 +1,70 @@
-//Drag and Drop
-//arreglo: para saber cuales son los divs ocupados
-let arreglo = ["","",""];
-
-//función que evita que se abra como enlace al soltar un elemento
-function allowDrop(ev){
+function allowDrop(ev) {
   ev.preventDefault();
 }
 
-//lo que ocurre cuando arrastramos un elemento
-function drag(ev){
-//metodo que establece el tip de datos y el valor del modulo arrastrado
-//en este caso el dato es texto y el valor es el id del elemento arrastrado: "modulo específico"
-  ev.dataTransfer.setData("text", ev.target.id, event.target.dataset.secret);
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+  //Creado por tu papi chulo
+  /*
+    Elimina el contenido del secret-number al moverlo de lugar llamando al abuelo que contiene todo
+  */
+  let target = ev.target;
+  let currentRow = target.parentNode;
+  let padrereal = currentRow.parentNode;
+  if (currentRow != null) {
+    console.log("estaba en mi puto lugar");
+    padrereal.querySelector('.secret-number').textContent = 0;  
+  }
 }
 
 function drop(ev) {
   ev.preventDefault();
-  if (arreglo[parseInt(ev.target.id)] == "") {
-    let data = ev.dataTransfer.getData("text");
-    arreglo[parseInt(ev.target.id)] = data;
-    ev.target.appendChild(document.getElementById(data));
-
-    // Obtener el número secreto correspondiente al elemento arrastrado
-    let secretNumber = ev.target.dataset.secret;
-
-    // Crear un elemento para mostrar el número secreto
-    let secretDiv = document.createElement('div');
-    secretDiv.innerHTML = secretNumber;
-
-    // Agregar la clase 'secret' al elemento creado
-    secretDiv.classList.add('secret');
-
-    // Agregar el número secreto al div
-    ev.target.appendChild(secretDiv);
-  } else {
-    // Si el espacio ya está ocupado, eliminar el número secreto si existe
-    let secretDiv = ev.target.querySelector('.secret');
-    if (secretDiv) {
-      secretDiv.remove();
+  let target = ev.target;
+  // Verificar si el elemento arrastrado es un botón
+  if (target.classList.contains('box')) {
+    let currentRow = target.parentNode;
+    let rightColumn = currentRow.querySelector('.secret-number');
+    if (!currentRow.querySelector('.draggable')) { //Comprueba que no haya un boton previo
+      // Eliminar el número secreto si no hay botón en la fila
+      if (ev.dataTransfer.getData('text')) {
+        let secretNumber = document.getElementById(ev.dataTransfer.getData('text')).getAttribute('data-secret');
+        rightColumn.textContent = secretNumber;
+        let target = ev.target;
+        let currentRow = target.parentNode;
+        //Obtenemos los padres para luego obtener los hijos (secrets numbers) y meter su suma en total
+        if (currentRow != null) {
+          let valor = document.getElementsByClassName('padre-secret-number');
+          for (let i = 0; i < valor.length; i++) {
+            console.log(valor[i]);
+            let todo = valor[i].getElementsByClassName('secret-number');
+            let numerototal=0;
+            for (let i = 0; i < todo.length; i++) {
+              if(isNaN(todo[i].textContent)){
+              }else{
+                numerototal+=parseInt(todo[i].textContent);
+              }
+            }
+            valor[i].querySelector('.total').textContent=numerototal;
+            if (numerototal == 20) {
+              valor[i].querySelector('.total').style.color= "green";
+            }else if (numerototal > 20 && numerototal <= 23 || numerototal >= 18 && numerototal < 20) {
+              valor[i].querySelector('.total').style.color= "orange";
+            }else{
+              valor[i].querySelector('.total').style.color= "red";
+            }
+          }
+        }
+      }
+      // Mover el botón arrastrado a la celda de destino
+      let draggedButton = document.getElementById(ev.dataTransfer.getData('text'));
+      target.appendChild(draggedButton);
     }
   }
 }
 
 
 
-//Barra de navegación elementos 
+//SLIDER DE MODULOS
 const tabs = document.querySelectorAll(".scrollable-tabs-container a");
 const rightArrow = document.querySelector(
   ".scrollable-tabs-container .right-arrow svg"
@@ -102,5 +122,31 @@ leftArrow.addEventListener("click", () => {
 });
 
 
+//CAPTURA DE IMAGEN
+function capturarImagen() {
+  const card = document.querySelector('.card-group');
 
+  html2canvas(card).then(function(canvas) {
+    const enlace = document.createElement('a');
+    enlace.href = canvas.toDataURL('image/png');
+    enlace.download = 'Reparto_Módulos.png';
+    enlace.click();
+  });
+}
 
+//PopUp
+
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}

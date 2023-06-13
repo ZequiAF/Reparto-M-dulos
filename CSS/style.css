@@ -1,0 +1,191 @@
+/* Modal Header */
+.modal-header {
+  padding: 2px 50px;
+  background-color: #d5cb14;
+  color: white;
+}
+.green{
+  color: green;
+}
+
+/* Modal Body */
+.modal-body {padding: 2px 1px;}
+
+/* Modal Footer */
+.modal-footer {
+  padding: 8px 52px;
+  background-color: #d5cb14;
+  color: white;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0px 80px;
+  border: 1px solid #888;
+  width: 50px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.5s
+}
+
+/* Add Animation */
+@keyframes animatetop {
+  from {top: -200px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
+.cuadro-informativo {
+  background-color: rgb(239, 239, 8);
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 20px;
+  max-width: 600px;
+  margin: 50px auto; /* Ajusta el valor para establecer la distancia desde la parte superior */
+  box-sizing: border-box;
+  position: relative; /* Agrega posición relativa para posicionar el botón */
+}
+
+.cuadro-informativo .boton {
+  position: absolute;
+  bottom: 10px; /* Ajusta el valor para establecer la distancia desde la parte inferior */
+  left: 50%;
+  transform: translateX(-50%); /* Centra horizontalmente el botón */
+  background-color: transparent;
+  border-radius: 5px;
+  color: black;
+  width: 200px;
+  height: 50px;
+}
+
+
+
+
+.cuadro-informativo h2 {
+  color: black;
+}
+
+.cuadro-informativo p {
+  color: black;
+}
+
+.cuadro-informativo ul {
+  color: black;
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.cuadro-informativo li {
+  list-style: disc;
+}
+
+
+.scrollable-tabs-container {
+  font-family: "Roboto", sans-serif;
+  background: hsla(66, 100%, 50%, 0.696);
+  max-width: 600px;
+  margin: 1px auto;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  
+}
+
+.scrollable-tabs-container svg {
+  width: 24px;
+  height: 24px;
+  padding: 8px;
+  
+  cursor: pointer;
+  color: #000000;
+  border-radius: 50%;
+  pointer-events: auto;
+}
+
+.scrollable-tabs-container ul {
+  display: flex;
+  gap: 16px;
+  padding: 12px 24px;
+  margin: 0;
+  list-style: none;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+.scrollable-tabs-container ul.dragging a {
+  pointer-events: none;
+}
+
+.scrollable-tabs-container ul.dragging {
+  scroll-behavior: auto;
+}
+
+.scrollable-tabs-container ul::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollable-tabs-container a {
+  color: #ffffff;
+  text-decoration: none;
+  background: #333333;
+  padding: 4px 20px;
+  display: inline-block;
+  border-radius: 4px;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.scrollable-tabs-container a.active {
+  background: #fff;
+  color: hsla(66, 100%, 50%, 0.696);;
+}
+
+.scrollable-tabs-container .right-arrow,
+.scrollable-tabs-container .left-arrow {
+  position: absolute;
+  height: 100%;
+  width: 100px;
+  top: 0;
+  display: none;
+  align-items: center;
+  padding: 0 10px;
+  pointer-events: none;
+}
+
+.scrollable-tabs-container .right-arrow.active,
+.scrollable-tabs-container .left-arrow.active {
+  display: flex;
+}
+
+.scrollable-tabs-container .right-arrow {
+  right: 0;
+  background: linear-gradient(to left,hsla(120, 3%, 12%, 0.696), 50%, transparent);
+  justify-content: flex-end;
+}
+
+.scrollable-tabs-container .left-arrow {
+  background: linear-gradient(to right, hsla(120, 3%, 12%, 0.696), 50%, transparent);
+}
+
+.scrollable-tabs-container svg:hover {
+  background: hsla(108, 11%, 82%, 0.696);
+}
+
+.contenedor{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+.captura {
+  background-color: black;
+  color: yellow;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 18px;
+}
