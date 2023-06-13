@@ -47,7 +47,7 @@ function drop(ev) {
             valor[i].querySelector('.total').textContent=numerototal;
             if (numerototal == 20) {
               valor[i].querySelector('.total').style.color= "green";
-            }else if (numerototal > 20 && numerototal <= 23 || numerototal >= 18 && numerototal < 20) {
+            }else if (numerototal > 20 && numerototal < 22 || numerototal >= 18 && numerototal < 20) {
               valor[i].querySelector('.total').style.color= "orange";
             }else{
               valor[i].querySelector('.total').style.color= "red";
